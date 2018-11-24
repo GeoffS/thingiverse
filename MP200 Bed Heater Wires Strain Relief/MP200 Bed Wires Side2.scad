@@ -8,19 +8,12 @@
 //
 // For commerical use, please contact us (geoff@geoffs.net).
 
-include <MP200 Bed Wires Mount Common.scad>
+include <quickthread.scad>
+include <MP200 Bed Wires Side Common.scad>
 
 difference()
 {
-  union()
-  {
-    mountBody();
-  }
-  screwClearanceHole();
-  mtgScreHole(1);
-  mtgScreHole(-1);
-  zipTimeHole(zipTimeCtr_yAtPlate);
-  zipTimeHole(zipTimeCtr_yAtEnd);
-
-  excessRemoval();
+  mountBody1();
+  alignmentPins();
+  translate([-1, 0, -1]) cube([60, 20, 60]);
 }
