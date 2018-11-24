@@ -8,7 +8,6 @@
 //
 // For commerical use, please contact us (geoff@geoffs.net).
 
-include <quickthread.scad>
 include <MP200 Bed Wires Mount Common.scad>
 
 nut_y = 8;
