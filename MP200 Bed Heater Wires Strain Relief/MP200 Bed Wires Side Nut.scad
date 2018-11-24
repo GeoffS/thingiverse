@@ -12,8 +12,8 @@ include <quickthread.scad>
 include <MP200 Bed Wires Side Common.scad>
 
 OD = 20.7; //threadOD + 8;
-ID = threadOD + 0.7;
-h = 8;
+ID = threadOD + 1.2;
+h = nut_y;
 
 render(convexity=5)
 difference()

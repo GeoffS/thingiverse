@@ -11,13 +11,14 @@
 include <quickthread.scad>
 include <MP200 Bed Wires Mount Common.scad>
 
-nut_y = 5;
+nut_y = 8;
 printerCaseideThickness = 1;
 
 threadOD = 12;
-threadID = threadOD-3 - 1;
+threadID = threadOD-3 - 2.5;
 echo(str("threadID = ", threadID));
-thread_y = printerCaseideThickness + nut_y + 2;
+thread_y = printerCaseideThickness + nut_y + 3;
+echo(str("thread_y = ", thread_y));
 
 sidePlate_y = 3;
 sidePlate_z = 20;
@@ -60,10 +61,11 @@ module holeEdgeRadiusNeg()
 module threadChamfer()
 {
   od = 15;
-  translate(holeCtr+[0, 4.7, 0]) rotate(-90, [1,0,0]) difference()
+  h1 = tan(31) * od/2;
+  translate(holeCtr+[0, thread_y-2.05, 0]) rotate(-90, [1,0,0]) difference()
   {
     cylinder(d=od, h=od/2);
-    cylinder(d1=od, d2=0, h=od/2);
+    cylinder(d1=od, d2=0, h=h1);
   }
 }
 
