@@ -1,7 +1,7 @@
 include <quickthread.scad>
 include <MP200 Bed Wires Side Common.scad>
 
-%mountBody1();
+//%mountBody1();
 
 difference()
 {
@@ -11,7 +11,12 @@ difference()
   alignmentPins();
   holeEdgeRadiusNeg();
 }
-holeEdgeRadiusPos();
+difference()
+{
+  holeEdgeRadiusPos();
+  excessRemoval();
+}
+
 difference()
 {
   threadsExterior();
